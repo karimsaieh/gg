@@ -2,7 +2,7 @@
 var typed = new Typed('#typed', {
     strings: [
         "Hello there.^2000",
-        "Welcome to <b class='shake'>Karim Sayeh</b>'s personal website",
+        "Welcome to <b class='shake-crazy'>Karim Sayeh</b>'s personal website",
     ],
     typeSpeed: 40,
     showCursor: false,
@@ -34,3 +34,34 @@ document.addEventListener('click', function (e) {
 particlesJS.load('particles-js', 'assets/particles.json', function () {
     console.log('callback - particles.js config loaded');
 });
+
+
+
+setTimeout(function () {
+    //howler
+    var sound = new Howl({
+        src: ['assets/sound/nyancat.mp3'],
+        autoplay: true,
+        loop:true
+    });
+    
+    setTimeout(function () {
+        document.getElementById("nyancat").style.visibility = "visible";
+        //dynamicjs
+        dynamics.animate(document.querySelector('#nyancat'), {
+            translateX: 1200
+        }, {
+                type: dynamics.spring,
+                duration: 60000,
+                frequency: 1,
+                friction: 70
+            })
+
+        setTimeout(function () {
+            sound.stop();
+            document.getElementById("nyancat").style.visibility = "hidden";
+        }, 60000);
+    }, 2500);
+
+}, 5000);
+
