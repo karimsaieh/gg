@@ -35,16 +35,15 @@ particlesJS.load('particles-js', 'assets/particles.json', function () {
     console.log('callback - particles.js config loaded');
 });
 
-
+//howler
+var sound = new Howl({
+    src: ['assets/sound/nyancat.mp3'],
+    preload: true,
+    loop:true
+});
 
 setTimeout(function () {
-    //howler
-    var sound = new Howl({
-        src: ['assets/sound/nyancat.mp3'],
-        autoplay: true,
-        loop:true
-    });
-    
+    sound.play();    
     setTimeout(function () {
         document.getElementById("nyancat").style.visibility = "visible";
         //dynamicjs
@@ -61,7 +60,7 @@ setTimeout(function () {
             sound.stop();
             document.getElementById("nyancat").style.visibility = "hidden";
         }, 60000);
-    }, 2500);
+    }, 500);
 
 }, 5000);
 
