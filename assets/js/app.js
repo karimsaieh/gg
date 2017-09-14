@@ -39,11 +39,22 @@ particlesJS.load('particles-js', 'assets/particles.json', function () {
 var sound = new Howl({
     src: ['assets/sound/nyancat.mp3'],
     preload: true,
-    loop:true
+    loop: true
 });
 
 setTimeout(function () {
-    sound.play();    
+    if (sound.state() === "loaded") {
+        nyanIt();
+    } else {
+        sound.once('load', function () {
+            nyanIt();
+        });
+    }
+}, 6000);
+
+
+function nyanIt() {
+    sound.play();
     setTimeout(function () {
         document.getElementById("nyancat").style.visibility = "visible";
         //dynamicjs
@@ -61,6 +72,4 @@ setTimeout(function () {
             document.getElementById("nyancat").style.visibility = "hidden";
         }, 60000);
     }, 500);
-
-}, 5000);
-
+}
