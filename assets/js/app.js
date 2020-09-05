@@ -2,7 +2,7 @@
 var typed = new Typed('#typed', {
     strings: [
         "Hello there.^2000",
-        "Welcome to <b class='shake-crazy'>Karim Sayeh</b>'s personal website",
+        "Welcome to <b class='shake-crazy'>Karim Sayeh</b>'s blog",
     ],
     typeSpeed: 40,
     showCursor: false,
