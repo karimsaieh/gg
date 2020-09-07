@@ -1,8 +1,8 @@
 //typedjs
 var typed = new Typed('#typed', {
     strings: [
-        "Hello there.^2000",
-        "Welcome to <b class='shake-crazy'>Karim Sayeh</b>'s blog",
+        "Hello! I'm Karim.^2000",
+        "<b class='shake-crazy'> Welcome to my personal website :D</b>",
     ],
     typeSpeed: 40,
     showCursor: false,
